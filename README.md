@@ -5,7 +5,11 @@ Massachusetts General Hospital (Mass General or MGH) is the original and largest
 ----
 
 ## Table of Contents
-
+- [Project Objectives](project-objective)
+- [Project Hypotheses](roject-ypotheses)
+- [Data Source and Description](data-source-and-description)
+- [Tools](tools)
+- [Exploratory Data Analysis](exploratory-data-analysis)
 ---
 ## Project Objective
 ----
@@ -29,10 +33,6 @@ Massachusetts General Hospital (Mass General or MGH) is the original and largest
 
   ------
 
-## Recommendations
----
-## References
-----
 ## Data Source and Description
 -----
 ## Tools
@@ -61,7 +61,9 @@ Column1
 
 [Excel Dashboard](https://github.com/Irene-Chola/Massachusetts-General-Hospital-Data-Analysis-Project/blob/main/MGHExcel.Dashboard.jpeg)
 
-
+## Recommendations
+---
+## References
 -----
 ## Recommendations
 ----
