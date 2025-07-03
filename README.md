@@ -34,6 +34,18 @@ Massachusetts General Hospital (Mass General or MGH) is the original and largest
   ------
 
 ## Data Source and Description
+The data used in this analysis was derived from the hospitals Electronic Health Records(EHR) provided in CSV files. 
+
+Here are the data files provided:
+1. **Patients** - This is the main dataset, containing the details of the each patient who visited the hospital.  The details captured include Inique ID, names, date of birth, Social Security Number, Passport Number, Birth Date, Death Date, Maiden name, Race, Marital Status, birth place etc. 
+2. **Encounters** - This data captures each hospital visit called an encounter. It captures a unique ID, start and end of the encounter, Duration, Patients Age, name, Birth Date, Death Date, Gender, Marital Status, Patients Coverage, Hospital Name etc
+3. **Providers** - This date captures the details of the health care provider. It captures Hospital Name, City, Doctor's Name, Gender, Speciality etc
+4. **Payers** - This data captures details of insurance provider
+5. **Payer_transitions** - This file captures data that links patients data and the insurance providers data
+6. **Organizations** - This file captures data of the healthcare facility
+
+You can find full details of the dataset here [Dataset](https://github.com/Irene-Chola/Massachusetts-General-Hospital-Data-Analysis-Project/blob/main/MGHExcel.Dashboard.jpeg) 
+   
 -----
 ## Tools
 - Excel - Data cleaning
