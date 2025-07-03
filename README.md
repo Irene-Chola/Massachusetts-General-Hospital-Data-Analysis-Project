@@ -12,7 +12,7 @@
 - [Exploratory Data Analysis](exploratory-data-analysis)
 ---
 ## Project Objective
-To analyze data derived from the Eletronic Health Records (EHR) to provide data that will enable the hospital's stakeholders make data driven decisions
+To analyze data derived from the Eletronic Health Records (EHR) of the hospital in order to to provide insights that will enable the hospital's stakeholders make data driven decisions.
 
 ----
 
@@ -63,6 +63,24 @@ You can find full details of the dataset here - [Dataset](https://github.com/Ire
 - PowerBI - Dashboarding
 -----
 ## Data Cleaning/Preparation
+Various tools where used for data cleaning and preparation.
+
+**1. Alteryx**
+
+Alteryx was used to clean the data. It came in handy in changing the data types of all the fields, removing unwanted characters in the patients names etc. One significant data cleaning step in Alteryx was changing the date type of the Patients file and calculating the age of the patients.
+
+**2. Python**
+
+Python also came in handy in data cleansing when all the other tools were challenged to calculate the age of the patients.
+
+**3. Excel**
+
+Once all the files were clean, a master excel workbook was created. The clean CSV files were converted to Excel files and added as sheets in the master file.
+The Master File was then loaded to Power Query for further analysis, manipulation and cleaning. 
+The encounters sheet was used as the main sheet. Joins were performed in Power Query to bring in Patients Details, Payers details, Organizations details and Providers details.
+
+Various conditional and custom columns were added such as age groups, age of patients, number of years covered and length of encounters in minutes
+
 ----
 ## EDA(Exploratory Data Analysis)
 ----
