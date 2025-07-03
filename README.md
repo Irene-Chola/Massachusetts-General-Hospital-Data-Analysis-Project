@@ -37,10 +37,10 @@ Massachusetts General Hospital (Mass General or MGH) is the original and largest
 -----
 ## Tools
 - Excel - Data cleaning
-- Alteryx - Alteryx was used to clean the data. It came in handy in changing the data types of all the fields, removing unwanted characters in the patients names etc. One significant data cleaning step in Alteryx was changing the date type of the Patients file and calculating the age of the patients.
-- Python - Python also came in handy in data cleansing when all the other tools were challenged to calculate the age of the patients.
-- MySQLWorkbench
-- PowerBI
+- Alteryx - Data cleaning
+- Python - Data cleaning
+- MySQLWorkbench - Data Analysis
+- PowerBI - Dashboarding
 -----
 ## Data Cleaning/Preparation
 ----
