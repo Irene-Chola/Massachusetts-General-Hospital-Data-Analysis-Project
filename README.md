@@ -5,11 +5,13 @@
 ----
 
 ## Table of Contents
-- [Projective Objective](#projective-objective)
-- [Project Hypotheses](#project-hypotheses)
-- [Data Source and Description](#data-source-and-description)
-- [Tools](#tools)
-- [Exploratory Data Analysis](#exploratory-data-analysis)
+1. [Projective Objective](#projective-objective)
+2. [Project Hypotheses](#project-hypotheses)
+3. [Data Source and Description](#data-source-and-description)
+4. [Tools](#tools)
+5. [Data Cleaning and Preparation](#data-cleaning-and-preparation)
+6. [Exploratory Data Analysis](#exploratory-data-analysis)
+7. [Findings](#findings)
   
 ---
 ## Projective Objective
@@ -63,7 +65,7 @@ You can find full details of the dataset here - [Dataset](https://github.com/Ire
 - MySQLWorkbench - Data Analysis
 - PowerBI - Dashboarding
 -----
-## Data Cleaning/Preparation
+## Data Cleaning and Preparation
 Various tools where used for data cleaning and preparation.
 
 **1. Alteryx**
@@ -85,19 +87,16 @@ Various conditional and custom columns were added such as age groups, age of pat
 ----
 ## Exploratory Data Analysis
 EDA was done in MySQLWorkbench.
-
+```SELECT *
+FROM Table1
+WHERE price >100;
+```
 ----
 ## Data Analysis
 used to include code
 
-SELECT *
-FROM Table1
-WHERE price >100;
-Heading1	Heading2	Heading3
-SQL	Python	Excel
-Column1
 ----
-## Results/Findings
+## Findings
 [Tableau Dashboard](https://public.tableau.com/app/profile/irene.chola/viz/MGHmedicalDataDashboard/Dashboard1?publish=yes)
 
 [Excel Dashboard](https://github.com/Irene-Chola/Massachusetts-General-Hospital-Data-Analysis-Project/blob/main/MGHExcel.Dashboard.jpeg)
