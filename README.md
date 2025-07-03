@@ -5,8 +5,8 @@
 ----
 
 ## Table of Contents
-- [Project Objectives](objectives)
-- [Project Hypotheses](hypotheses)
+- [Objectives](objectives)
+- [Hypotheses](hypotheses)
 - [Data Source and Description](data_source_and_description)
 - [Tools](tools)
 - [Exploratory Data Analysis](exploratorydataanalysis)
