@@ -30,7 +30,8 @@ SQL	Python	Excel
 Column1
 
 ## Results/Findings
-[Tableau Dashboard]()
+[Tableau Dashboard](https://public.tableau.com/app/profile/irene.chola/viz/MGHmedicalDataDashboard/Dashboard1?publish=yes)
+
 [Excel Dashboard]()
 ## Recommendations
 ## Limitations
