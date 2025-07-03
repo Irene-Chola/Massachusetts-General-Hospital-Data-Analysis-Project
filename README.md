@@ -40,9 +40,9 @@ The data used in this analysis was derived from the hospital's Electronic Health
 
 Here are the data files provided:
 
-**1. Patients** - This is the main dataset, containing the details of the each patient who visited the hospital.  The details captured include Inique ID, names, date of birth, Social Security Number, Passport Number, Birth Date, Death Date, Maiden name, Race, Marital Status, birth place etc. 
+**1. Patients** - This table containesl the details of the each patient who visited the hospital.  The details captured include Inique ID, names, date of birth, Social Security Number, Passport Number, Birth Date, Death Date, Maiden name, Race, Marital Status, birth place etc. 
 
-**2. Encounters** - This data captures each hospital visit called an encounter. It captures a unique ID, start and end of the encounter, Duration, Patients Age, name, Birth Date, Death Date, Gender, Marital Status, Patients Coverage, Hospital Name etc
+**2. Encounters** - This data captures each hospital visit called an encounter. It captures a unique ID, start and end of the encounter, Duration, Patients Age, name, Birth Date, Death Date, Gender, Marital Status, Patients Coverage, Hospital Name etc. This is the main table that brings together data from all the other tables.
 
 **3. Providers** - This date captures the details of the health care provider. It captures Hospital Name, City, Doctor's Name, Gender, Speciality etc
 
@@ -70,11 +70,9 @@ Various tools where used for data cleaning and preparation.
 Alteryx was used to clean the data. It came in handy in changing the data types of all the fields, removing unwanted characters in the patients names etc. One significant data cleaning step in Alteryx was changing the date type of the Patients file and calculating the age of the patients.
 
 **2. Python**
-
 Python also came in handy in data cleansing when all the other tools were challenged to calculate the age of the patients.
 
 **3. Excel**
-
 Once all the files were clean, a master excel workbook was created. The clean CSV files were converted to Excel files and added as sheets in the master file.
 The Master File was then loaded to Power Query for further analysis, manipulation and cleaning. 
 The encounters sheet was used as the main sheet. Joins were performed in Power Query to bring in Patients Details, Payers details, Organizations details and Providers details.
@@ -83,6 +81,8 @@ Various conditional and custom columns were added such as age groups, age of pat
 
 ----
 ## EDA(Exploratory Data Analysis)
+EDA was done in MySQLWorkbench.
+
 ----
 ## Data Analysis
 used to include code
