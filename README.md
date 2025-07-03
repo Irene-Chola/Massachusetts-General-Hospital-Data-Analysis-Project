@@ -5,13 +5,13 @@
 ----
 
 ## Table of Contents
-- [Project Objectives](project-objective)
-- [Project Hypotheses](roject-ypotheses)
-- [Data Source and Description](data-source-and-description)
+- [Project Objectives](projectobjectives)
+- [Project Hypotheses](projecthypotheses)
+- [Data Source and Description](datasourceanddescription)
 - [Tools](tools)
-- [Exploratory Data Analysis](exploratory-data-analysis)
+- [Exploratory Data Analysis](exploratorydataanalysis)
 ---
-## Project Objective
+## Project Objectives
 To analyze data derived from the Eletronic Health Records (EHR) of the hospital in order to to provide insights that will enable the hospital's stakeholders make data driven decisions.
 
 ----
