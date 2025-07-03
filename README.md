@@ -10,10 +10,10 @@ Massachusetts General Hospital (Mass General or MGH) is the original and largest
 
 ## Data Source and Description
 ## Tools
-Excel - Data cleaning
-Dowload Here
-MySQLWorkbench
-PowerBI
+- Excel - Data cleaning
+- Alteryx
+- MySQLWorkbench
+- PowerBI
 
 ##Data Cleaning/Preparation
 
@@ -30,6 +30,8 @@ SQL	Python	Excel
 Column1
 
 ## Results/Findings
+[Tableau Dashboard]()
+[Excel Dashboard]()
 ## Recommendations
 ## Limitations
 ## References
