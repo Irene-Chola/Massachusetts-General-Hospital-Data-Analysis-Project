@@ -7,7 +7,7 @@
 ## Table of Contents
 - [Objectives](objectives)
 - [Hypotheses](hypotheses)
-- [Data Source and Description](data_source_and_description)
+- [Data Source and Description](datasourceanddescription)
 - [Tools](tools)
 - [Exploratory Data Analysis](exploratorydataanalysis)
 ---
