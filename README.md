@@ -140,6 +140,7 @@ FROM mghmedicaldata.encounters
 GROUP BY ENCOUNTER_CLASS;
 ````
 Here is a list a comprehensive list of queries that was used for data analysis
+[SQL Queries](
 ----
 ## Dashboards
 [Tableau Dashboard](https://public.tableau.com/app/profile/irene.chola/viz/MGHmedicalDataDashboard/Dashboard1?publish=yes)
