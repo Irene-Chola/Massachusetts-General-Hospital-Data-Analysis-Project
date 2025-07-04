@@ -170,10 +170,12 @@ Here is a list a comprehensive list of queries that was used for data analysis
 ---
 
 ## Recommendations
+1. There is a dire need to increase healthcare coverage.  Majority of patients are paying for healthcare services out of pocket.
+2. The need to increase healthcare coverage needs to also be looked into based on gender, race and marital status. Strategies need to be formulated to target other races (Asian, black, natives, others), women and singles. These are classes of the population that are lagging behind in healthcare coverage
+3. Rural areas have significantly less hospitals leading to low facility utilization and revenue. Strategies to provide healthcare in rural areas should be looked into. This can include increasing the number of hospital and introducing home visits.
 ----
 ## Limitations
-1. Some of the data was incomplete or missing. For example, encounter reasons and marital status.
-2. 
+1. Incomplete data - Some of the data was incomplete or missing. For example, encounter reasons and marital status. 
 -----
 ## References
-
+[Massachusetts General Hospital](http://massgeneral.org/about/)
