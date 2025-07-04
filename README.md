@@ -69,15 +69,21 @@ You can find full dataset used here - [Dataset](https://github.com/Irene-Chola/M
 Various tools where used for data cleaning and preparation.
 
 **1. Alteryx**
-[Data Cleaning Alteryx](https://github.com/Irene-Chola/Massachusetts-General-Hospital-Data-Analysis-Project/blob/main/MGHExcel.Dashboard.jpeg)
-Alteryx was used to clean the data. It came in handy in changing the data types of all the fields, removing unwanted characters in the patients names etc. One significant data cleaning step in Alteryx was changing the date type of the Patients file and calculating the age of the patients.
+
+[Data Cleaning in Alteryx](https://github.com/Irene-Chola/Massachusetts-General-Hospital-Data-Analysis-Project/blob/main/ConsolidateAlteryx.datacleaning.yxmd)
+
+Alteryx was used to clean the data. It came in handy in changing the data types of all the fields, removing unwanted characters in the patients names etc. One significant data cleaning step in Alteryx was changing the date type of the Patients file.
 
 **2. Python**
-[Python Code](https://github.com/Irene-Chola/Massachusetts-General-Hospital-Data-Analysis-Project/blob/main/MGHExcel.Dashboard.jpeg)
+
+[Python Code](https://github.com/Irene-Chola/Massachusetts-General-Hospital-Data-Analysis-Project/blob/main/calculateage.ipynb)
+
 Python also came in handy in data cleansing when all the other tools were challenged to calculate the age of the patients.
 
 **3. Excel**
+
 [Excel Data Cleaning](https://github.com/Irene-Chola/Massachusetts-General-Hospital-Data-Analysis-Project/blob/main/MGHExcel.Dashboard.jpeg)
+
 Once all the files were clean, a master excel workbook was created. The clean CSV files were converted to Excel files and added as sheets in the master file.
 The Master File was then loaded to Power Query for further analysis, manipulation and cleaning. 
 The encounters sheet was used as the main sheet. Joins were performed in Power Query to bring in Patients Details, Payers details, Organizations details and Providers details.
@@ -156,18 +162,14 @@ Here is a list a comprehensive list of queries that was used for data analysis
 3. Males have more access to healthcare coverage compared to females and in the same vein, we have more male healthcare providers than females.
 4. The white race has the highest healthcare coverage, higher than all the other races combined.
 5. Most people do not disclose their encounter reason. Undisclosed encounter reason has healthcare expenses of over 41B.
-6. Encounters have consistently gone up over the years. However a sudden nose dive in encounters is seen from around 2019, coinciding with the Covid 19 Pandemic.
+6. Encounters have consistently gone up over the years. However a sudden spike in encounters is seen from around 2019, coinciding with the Covid 19 Pandemic.
 ---
 
+## Recommendations
+----
 ## Limitations
 1. Some of the data was incomplete or missing. For example, encounter reasons and marital status.
 2. 
-
-## References
------
-## Recommendations
-----
-
 -----
 ## References
 
