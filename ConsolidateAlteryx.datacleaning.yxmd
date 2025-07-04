@@ -1,0 +1,997 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2023.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="78" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\pcadmin\Desktop\patients.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>patients.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Id" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="BIRTHDATE" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="DEATHDATE" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="SSN" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="DRIVERS" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="PASSPORT" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="PREFIX" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="FIRST" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="LAST" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="SUFFIX" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="MAIDEN" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="MARITAL" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="RACE" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="ETHNICITY" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="GENDER" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="BIRTHPLACE" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="ADDRESS" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="CITY" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="STATE" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="COUNTY" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="ZIP" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="LAT" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="LON" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="HEALTHCARE_EXPENSES" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+            <Field name="HEALTHCARE_COVERAGE" size="254" source="File: C:\Users\pcadmin\Desktop\patients.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+        <Position x="162" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <IsFrom value="False" />
+          <InputFieldName>BIRTHDATE</InputFieldName>
+          <Language>English</Language>
+          <Format>MM/dd/yyyy</Format>
+          <OutputFieldName>birthday_Out</OutputFieldName>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Convert BIRTHDATE From:
+MM/dd/yyyy</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="366" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Id" selected="True" />
+            <SelectField field="FIRST" selected="True" rename="FIRST_NAME" />
+            <SelectField field="PREFIX" selected="True" />
+            <SelectField field="LAST" selected="True" rename="LAST_NAME" />
+            <SelectField field="SUFFIX" selected="True" />
+            <SelectField field="BIRTHDATE" selected="False" type="Date" size="10" />
+            <SelectField field="birthday_Out" selected="True" rename="BIRTH_DATE" />
+            <SelectField field="deathdate_ out" selected="True" rename="DEATH_DATE" />
+            <SelectField field="DEATHDATE" selected="False" type="Date" size="10" />
+            <SelectField field="SSN" selected="True" />
+            <SelectField field="DRIVERS" selected="True" rename="DRIVERS_LICENSE_NUMBER" />
+            <SelectField field="PASSPORT" selected="True" rename="PASSPORT_NUMBER" />
+            <SelectField field="MAIDEN" selected="True" rename="MAIDEN_NAME" />
+            <SelectField field="MARITAL" selected="True" rename="MARITAL_STATUS" />
+            <SelectField field="RACE" selected="True" />
+            <SelectField field="ETHNICITY" selected="True" />
+            <SelectField field="GENDER" selected="True" />
+            <SelectField field="BIRTHPLACE" selected="True" />
+            <SelectField field="ADDRESS" selected="True" />
+            <SelectField field="CITY" selected="True" />
+            <SelectField field="STATE" selected="True" />
+            <SelectField field="COUNTY" selected="True" />
+            <SelectField field="ZIP" selected="True" />
+            <SelectField field="LAT" selected="True" />
+            <SelectField field="LON" selected="True" />
+            <SelectField field="HEALTHCARE_EXPENSES" selected="True" type="Double" size="8" />
+            <SelectField field="HEALTHCARE_COVERAGE" selected="True" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+        <Position x="258" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <IsFrom value="False" />
+          <InputFieldName>DEATHDATE</InputFieldName>
+          <Language>English</Language>
+          <Format>MM/dd/yyyy</Format>
+          <OutputFieldName>deathdate_ out</OutputFieldName>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Convert DEATHDATE From:
+MM/dd/yyyy</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="498" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="ReplaceChar([FIRST_NAME],&quot;1234567890&quot;,&quot;&quot;)" field="FIRST_NAME" size="254" type="V_String" />
+            <FormulaField expression="ReplaceChar([LAST_NAME],&quot;1234567890&quot;,&quot;&quot;)" field="LAST_NAME" size="254" type="V_String" />
+            <FormulaField expression="DateTimeDiff(DateTimeToday(),[BIRTH_DATE],'Year')" field="AGE" size="1073741823" type="V_WString" />
+            <FormulaField expression="ReplaceChar([MAIDEN_NAME],&quot;1234567890&quot;,&quot;&quot;)" field="MAIDEN_NAME" size="254" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>FIRST_NAME = ReplaceChar([FIRST_NAME],"1234567890","")
+LAST_NAME = ReplaceChar([...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="642" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Id" selected="True" />
+            <SelectField field="FIRST_NAME" selected="True" />
+            <SelectField field="PREFIX" selected="True" />
+            <SelectField field="LAST_NAME" selected="True" />
+            <SelectField field="SUFFIX" selected="True" />
+            <SelectField field="BIRTH_DATE" selected="True" />
+            <SelectField field="DEATH_DATE" selected="True" />
+            <SelectField field="AGE" selected="True" type="Int64" size="8" />
+            <SelectField field="SSN" selected="True" />
+            <SelectField field="DRIVERS_LICENSE_NUMBER" selected="True" />
+            <SelectField field="PASSPORT_NUMBER" selected="True" />
+            <SelectField field="MAIDEN_NAME" selected="True" />
+            <SelectField field="MARITAL_STATUS" selected="True" />
+            <SelectField field="RACE" selected="True" />
+            <SelectField field="ETHNICITY" selected="True" />
+            <SelectField field="GENDER" selected="True" />
+            <SelectField field="BIRTHPLACE" selected="True" />
+            <SelectField field="ADDRESS" selected="True" />
+            <SelectField field="CITY" selected="True" />
+            <SelectField field="STATE" selected="True" />
+            <SelectField field="COUNTY" selected="True" />
+            <SelectField field="ZIP" selected="True" />
+            <SelectField field="LAT" selected="True" />
+            <SelectField field="LON" selected="True" />
+            <SelectField field="HEALTHCARE_EXPENSES" selected="True" />
+            <SelectField field="HEALTHCARE_COVERAGE" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings>
+        <Position x="774" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"Id","FIRST_NAME","PREFIX","LAST_NAME","SUFFIX","BIRTH_DATE","DEATH_DATE","AGE","SSN","DRIVERS_LICENSE_NUMBER","PASSPORT_NUMBER","MAIDEN_NAME","MARITAL_STATUS","RACE","ETHNICITY","GENDER","BIRTHPLACE","ADDRESS","CITY","STATE","COUNTY","ZIP","LAT","LON","HEALTHCARE_EXPENSES","HEALTHCARE_COVERAGE"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">True</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="100" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text><![CDATA[brought in the raw CSV file from the portal- ]]></Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="222" y="114" width="100" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text><![CDATA[changed date format to conform with iso standards ]]></Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="414" y="102" width="132" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>changed data types,rearranged  and renamed some columns</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="666" y="78" width="100" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>removed number characters at the end of first,last and maiden name</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="822" y="90" width="100" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text><![CDATA[removed
+nulll fields, rows
+duplicates if any
+trailing and leading spaces
+]]></Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="162" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>payers.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Id" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="NAME" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="ADDRESS" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="CITY" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="STATE_HEADQUARTERED" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="ZIP" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="PHONE" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="AMOUNT_COVERED" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="AMOUNT_UNCOVERED" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="REVENUE" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="COVERED_ENCOUNTERS" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="UNCOVERED_ENCOUNTERS" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="COVERED_MEDICATIONS" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="UNCOVERED_MEDICATIONS" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="COVERED_PROCEDURES" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="UNCOVERED_PROCEDURES" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="COVERED_IMMUNIZATIONS" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="UNCOVERED_IMMUNIZATIONS" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="UNIQUE_CUSTOMERS" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="QOLS_AVG" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+            <Field name="MEMBER_MONTHS" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payers.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="258" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>
+          </TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings>
+        <Position x="318" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">True</Value>
+          <Value name="Check Box (136)">True</Value>
+          <Value name="List Box (11)">"Id","NAME","ADDRESS","CITY","STATE_HEADQUARTERED","ZIP","PHONE","AMOUNT_COVERED","AMOUNT_UNCOVERED","REVENUE","COVERED_ENCOUNTERS","UNCOVERED_ENCOUNTERS","COVERED_MEDICATIONS","UNCOVERED_MEDICATIONS","COVERED_PROCEDURES","UNCOVERED_PROCEDURES","COVERED_IMMUNIZATIONS","UNCOVERED_IMMUNIZATIONS","UNIQUE_CUSTOMERS","QOLS_AVG","MEMBER_MONTHS"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">True</Value>
+          <Value name="Check Box (122)">True</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="450" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="NAME" selected="True" size="100" />
+            <SelectField field="ADDRESS" selected="True" size="100" />
+            <SelectField field="CITY" selected="True" size="100" />
+            <SelectField field="STATE_HEADQUARTERED" selected="True" size="10" />
+            <SelectField field="ZIP" selected="True" size="2147483647" />
+            <SelectField field="PHONE" selected="True" size="20" />
+            <SelectField field="AMOUNT_COVERED" selected="True" type="Double" size="8" />
+            <SelectField field="AMOUNT_UNCOVERED" selected="True" type="Double" size="8" />
+            <SelectField field="REVENUE" selected="True" type="Double" size="8" />
+            <SelectField field="COVERED_ENCOUNTERS" selected="True" type="Int64" size="8" />
+            <SelectField field="UNCOVERED_ENCOUNTERS" selected="True" type="Int64" size="8" />
+            <SelectField field="COVERED_MEDICATIONS" selected="True" type="Int64" size="8" />
+            <SelectField field="UNCOVERED_MEDICATIONS" selected="True" type="Int64" size="8" />
+            <SelectField field="COVERED_PROCEDURES" selected="True" type="Int64" size="8" />
+            <SelectField field="UNCOVERED_PROCEDURES" selected="True" type="Int64" size="8" />
+            <SelectField field="COVERED_IMMUNIZATIONS" selected="True" type="Int64" size="8" />
+            <SelectField field="UNCOVERED_IMMUNIZATIONS" selected="True" type="Int64" size="8" />
+            <SelectField field="UNIQUE_CUSTOMERS" selected="True" type="Int64" size="8" />
+            <SelectField field="QOLS_AVG" selected="True" type="Double" size="8" />
+            <SelectField field="MEMBER_MONTHS" selected="True" type="Int64" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="234" y="858" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payer_transitions.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>payer_transitions.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="PATIENT" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payer_transitions.csv" type="V_String" />
+            <Field name="START_YEAR" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payer_transitions.csv" type="V_String" />
+            <Field name="END_YEAR" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payer_transitions.csv" type="V_String" />
+            <Field name="PAYER" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payer_transitions.csv" type="V_String" />
+            <Field name="OWNERSHIP" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\payer_transitions.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="330" y="786" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>
+          </TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings>
+        <Position x="366" y="858" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">True</Value>
+          <Value name="Check Box (136)">True</Value>
+          <Value name="List Box (11)">"PATIENT","START_YEAR","END_YEAR","PAYER","OWNERSHIP"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">True</Value>
+          <Value name="Check Box (122)">True</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="474" y="858" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="PATIENT" selected="True" size="200" />
+            <SelectField field="START_YEAR" selected="True" type="Int64" size="8" />
+            <SelectField field="END_YEAR" selected="True" type="Int64" size="8" />
+            <SelectField field="PAYER" selected="True" size="200" />
+            <SelectField field="OWNERSHIP" selected="True" size="50" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="570" y="858" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[END_YEAR] - [START_YEAR]" field="Years Covered" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Years Covered = [END_YEAR] - [START_YEAR]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="894" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\Cleaned Data\Cleaned Files\payer_transitions.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>payer_transitions.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="PATIENT" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\Cleaned Data\Cleaned Files\payer_transitions.csv" type="V_WString" />
+            <Field name="START_YEAR" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\Cleaned Data\Cleaned Files\payer_transitions.csv" type="V_WString" />
+            <Field name="END_YEAR" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\Cleaned Data\Cleaned Files\payer_transitions.csv" type="V_WString" />
+            <Field name="YEARS_COVERED" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\Cleaned Data\Cleaned Files\payer_transitions.csv" type="V_WString" />
+            <Field name="PAYER" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\Cleaned Data\Cleaned Files\payer_transitions.csv" type="V_WString" />
+            <Field name="OWNERSHIP" size="254" source="File: C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\Cleaned Data\Cleaned Files\payer_transitions.csv" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="918" y="438" width="156" height="52" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Uploading payer_transitions.CSV file to mySQL</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="881" y="113" width="152" height="165" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 24</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="23">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="906" y="162" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">C:\Users\pcadmin\Desktop\patients_cleaned.csv</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>28591</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>patients_cleaned.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="509" y="461" width="156" height="165" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 6</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="29">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="534" y="510" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\Cleaned Data\Cleaned Files\Payers_Cleaned.csv</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>28591</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Payers_Cleaned.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="701" y="809" width="152" height="165" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 7</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="36">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="726" y="858" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">C:\Users\ADMIN\OneDrive\Documents\Smart Data 20\Data Project\Cleaned Data\Cleaned Files\Payer_Transitions_Cleaned.csv</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>28591</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Payer_Transitions_Cleaned.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1001" y="509" width="153" height="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 4</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="40">
+          <GuiSettings Plugin="LockInGui.LockInStreamIn.LockInStreamIn">
+            <Position x="1026" y="558" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Connection>mySQL_InDB_Connection</Connection>
+              <CreateMode>Create</CreateMode>
+              <Table>mghmedicaldata.payer_transitions</Table>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Source=mySQL_InDB_Connection
+Table=mghmedicaldata.payer_transitions</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="LockInEngine.dll" EngineDllEntryPoint="AlteryxLockInStreamIn" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="17" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output26" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="27" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output26" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="33" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output26" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>ConsolidateAlteryx1.Group1</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="5592208f-8c37-4a64-a44c-cede3bbf6b97" />
+      <Telemetry>
+        <PreviousWorkflowId value="f2cca331-ba47-4d2f-99a5-e5db9de1ea31" />
+        <OriginWorkflowId value="af148e06-9596-42a9-9ff1-3e9628bec8cb" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
