@@ -139,6 +139,7 @@ SELECT ENCOUNTER_CLASS, count(Id) TOTAL_ENCOUNTERS, round(sum(BASE_ENCOUNTER_COS
 FROM mghmedicaldata.encounters
 GROUP BY ENCOUNTER_CLASS;
 ````
+Here is a list a comprehensive list of queries that was used for data analysis
 ----
 ## Dashboards
 [Tableau Dashboard](https://public.tableau.com/app/profile/irene.chola/viz/MGHmedicalDataDashboard/Dashboard1?publish=yes)
