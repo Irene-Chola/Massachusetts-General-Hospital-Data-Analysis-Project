@@ -55,7 +55,7 @@ Here are the data files provided:
 
 **6. Organizations** - This file captures data of the healthcare facility
 
-You can find full details of the dataset here - [Dataset](https://github.com/Irene-Chola/Massachusetts-General-Hospital-Data-Analysis-Project/blob/main/MGHExcel.Dashboard.jpeg) 
+You can find full dataset used here - [Dataset](https://github.com/Irene-Chola/Massachusetts-General-Hospital-Data-Analysis-Project/blob/main/MGHExcel.Dashboard.jpeg) 
    
 -----
 ## Tools
@@ -86,17 +86,61 @@ Various conditional and custom columns were added such as age groups, age of pat
 
 ----
 ## Exploratory Data Analysis
-EDA was done in MySQLWorkbench.
-```SELECT *
-FROM Table1
-WHERE price >100;
-```
+- For each City in Massachussets, what is the total revenue generated, number of organizations and facility utilization?
+- What is the distribution of patients by gender?
+- what is the distribution of providers by gender?
+- What is the marital status by healthcare coverage?
+- What is the count of Providers speciality?
+- What is comparison betweent the total health care expeses and health care coverage?
+- What is the count of each patient encounter class?
+- What is the race of the patients?
+- What is the percentage of healthcare coverage by gender?
+- List of patients under different healthcare providers
+  
 ----
 ## Data Analysis
-used to include code
+EDA was done in MySQLWorkbench. Here are some examples of queries that were used to analyse the date.
 
+1. This code was used to classify the patients into various age groups.
+```S\select concat(FIRST_NAME, ' ', LAST_NAME) Full_Name, AGE,
+CASE
+    WHEN AGE >= 0 AND AGE <= 3 THEN 'Baby'
+    WHEN AGE > 3 AND AGE <= 8 THEN 'Todler'
+    WHEN AGE > 8 AND AGE <= 18 THEN 'Minor'
+    WHEN AGE > 18 AND AGE <= 35 THEN 'Young Adult'
+    WHEN AGE > 35 AND AGE <= 55 THEN 'Senior Adult'
+    WHEN AGE > 55 AND AGE <= 70 THEN 'Upper Middle Age'
+    WHEN AGE > 70 THEN 'Senior Citizen'
+END AS AGE_GROUP
+FROM mghmedicaldata.patients
+ORDER BY Full_Name;
+```
+
+2. This is an example of a stored procedure that was created to retrieve the details of all patients under an a particular healthcare provider
+
+```
+delimiter $$
+
+CREATE PROCEDURE mghmedicaldata.Insurance_Provider(IN Insurer_Name TEXT)
+BEGIN
+  SELECT  PD.NAME Name_of_Insurer, P.FIRST_NAME, P.LAST_NAME, PT.START_YEAR, PT.END_YEAR, PT.YEARS_COVERED, PT.OWNERSHIP, PD.AMOUNT_COVERED, PD.AMOUNT_UNCOVERED
+  FROM patients P
+  JOIN mghmedicaldata.payer_transitions PT
+  ON P.Id = PT.PATIENT
+  JOIN payers PD
+  ON PT.PAYER = PD.Id
+        
+WHERE PD.NAME = Insurer_Name;
+END $$ 
+```
+3. This sql code was used to classify the data by encounter class, give a total of each encounter class, and the cost of each encounter class
+```
+SELECT ENCOUNTER_CLASS, count(Id) TOTAL_ENCOUNTERS, round(sum(BASE_ENCOUNTER_COST),2) TOTAL_ENCOUNTER_COST
+FROM mghmedicaldata.encounters
+GROUP BY ENCOUNTER_CLASS;
+````
 ----
-## Findings
+## Dashboards
 [Tableau Dashboard](https://public.tableau.com/app/profile/irene.chola/viz/MGHmedicalDataDashboard/Dashboard1?publish=yes)
 
 [Excel Dashboard](https://github.com/Irene-Chola/Massachusetts-General-Hospital-Data-Analysis-Project/blob/main/MGHExcel.Dashboard.jpeg)
