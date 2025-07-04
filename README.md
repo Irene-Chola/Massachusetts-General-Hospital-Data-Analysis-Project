@@ -69,15 +69,15 @@ You can find full dataset used here - [Dataset](https://github.com/Irene-Chola/M
 Various tools where used for data cleaning and preparation.
 
 **1. Alteryx**
-
+[Data Cleaning Alteryx](https://github.com/Irene-Chola/Massachusetts-General-Hospital-Data-Analysis-Project/blob/main/MGHExcel.Dashboard.jpeg)
 Alteryx was used to clean the data. It came in handy in changing the data types of all the fields, removing unwanted characters in the patients names etc. One significant data cleaning step in Alteryx was changing the date type of the Patients file and calculating the age of the patients.
 
 **2. Python**
-
+[Python Code](https://github.com/Irene-Chola/Massachusetts-General-Hospital-Data-Analysis-Project/blob/main/MGHExcel.Dashboard.jpeg)
 Python also came in handy in data cleansing when all the other tools were challenged to calculate the age of the patients.
 
 **3. Excel**
-
+[Excel Data Cleaning](https://github.com/Irene-Chola/Massachusetts-General-Hospital-Data-Analysis-Project/blob/main/MGHExcel.Dashboard.jpeg)
 Once all the files were clean, a master excel workbook was created. The clean CSV files were converted to Excel files and added as sheets in the master file.
 The Master File was then loaded to Power Query for further analysis, manipulation and cleaning. 
 The encounters sheet was used as the main sheet. Joins were performed in Power Query to bring in Patients Details, Payers details, Organizations details and Providers details.
