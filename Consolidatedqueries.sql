@@ -26,8 +26,6 @@ ORDER BY code_count DESC
 LIMIT 5;  # Minimum of 5
 
 
-
-
 #Identify Most Common Encounter Codes
 SELECT CODE, DESCRIPTION, COUNT(*) AS code_count
 FROM mghmedicaldata.encounters
@@ -199,6 +197,110 @@ FROM mghmedicaldata.patients ;
 select RACE, count(*) TOTAL, round(sum(HEALTHCARE_EXPENSES)) HEALTH_CARE_EXPENSE, round(sum(HEALTHCARE_COVERAGE)) HEALTH_CARE_COVERAGE
 from mghmedicaldata.patients
 group by RACE;
+
+# Retrieve Information for a Specific Patient
+#This stored procedure retrieves all information for a specific patient based on their identifier:
+delimiter  $$
+CREATE PROCEDURE mghmedicaldata.Get_Patient_Info_By_SSN(IN patient_ssn VARCHAR(15))
+BEGIN
+    SELECT *
+    FROM mghmedicaldata.patients
+    WHERE patient_ssn = SSN ;
+END $$
+delimiter ;
+CALL Get_Patient_Info_By_SSN(); 
+
+
+# This procedure retrieves providers in a particular city
+delimiter $$
+create procedure mghmedicaldata.Get_Provider_By_City(IN City_Name varchar(100))
+begin
+	SELECT NAME, SPECIALITY
+	FROM mghmedicaldata.providers
+	WHERE CITY = City_Name;
+end $$
+delimiter ;
+
+CALL mghmedicaldata.GetProviderByCity('Boston'); -- replace'Boston with desired city name'
+
+
+
+#This stored procedure calculates the average utilization rate for providers based on their specialty
+delimiter $$
+CREATE PROCEDURE mghmedicaldata.Calculate_Average_Utilization_By_Speciality(IN specialty_Name VARCHAR(255))
+BEGIN
+    SELECT SPECIALITY, AVG(UTILIZATION) AS average_utilization
+    FROM mghmedicaldata.providers
+    WHERE SPECIALITY = specialty_name
+    GROUP BY SPECIALITY;
+END $$
+delimiter ;
+CALL Calculate_Average_Utilization_By_Speciality('Cardiology');
+# DROP PROCEDURE Calculate_Average_Utilization_By_Speciality
+
+#This procedure retrieves patients'number of years covered
+delimiter $$
+CREATE PROCEDURE mghmedicaldata.Find_Patient_no_years_covered(IN Patient_SSN VARCHAR(15))
+BEGIN
+    SELECT mp.FIRST_NAME, mp.LAST_NAME, mpt.YEARS_COVERED
+    FROM mghmedicaldata.patients mp
+    JOIN mghmedicaldata.payer_transitions mpt
+    ON mp.Id = mpt.PATIENT
+    WHERE SSN = Patient_SSN;
+     
+END $$
+delimiter ;
+# CALL mgh.Find_Patient_no_years_covered(); -- enter patients SSN 
+
+
+# Identify Patients with Continuous Coverage
+#This stored procedure identifies patients with continuous coverage over a specified period:
+delimiter $$
+CREATE PROCEDURE mghmedicaldata.FindPatientsWithContinuousCoverage(IN minYearsCovered INT)
+BEGIN
+    SELECT mp.FIRST_NAME, mp.LAST_NAME
+    FROM mghmedicaldata.patients mp
+    JOIN mghmedicaldata.payer_transitions mpt
+    ON mp.Id = mpt.patient
+    WHERE YEARS_COVERED >= minYearsCovered;
+     
+END $$
+delimiter ;
+# CALL FindPatientsWithContinuousCoverage(6); -- Replace 5 with the desired minimum years of coverage
+
+
+-- Stored Procedures 
+
+-- Stored Produre to check the speciality and hosptial of healthcare provider 
+delimiter $$
+
+CREATE PROCEDURE mghmedicaldata.Health_Care_Provider(IN Full_Name text)
+BEGIN
+select p.NAME, p.GENDER, p.SPECIALITY, o.HOSPITAL_NAME
+from mghmedicaldata.providers p
+join mghmedicaldata.organizations O
+on O.Id = P.ORGANIZATION
+
+WHERE p.NAME = Full_Name;
+END $$
+
+delimiter ;
+
+
+-- Stored Procedure that brings up the names of all the patients under an Insurance Provider using the insurance providers name
+delimiter $$
+
+CREATE PROCEDURE mghmedicaldata.Insurance_Provider(IN Insurer_Name TEXT)
+BEGIN
+		SELECT  PD.NAME Name_of_Insurer, P.FIRST_NAME, P.LAST_NAME, PT.START_YEAR, PT.END_YEAR, PT.YEARS_COVERED, PT.OWNERSHIP, PD.AMOUNT_COVERED, PD.AMOUNT_UNCOVERED
+		FROM patients P
+		JOIN mghmedicaldata.payer_transitions PT
+		ON P.Id = PT.PATIENT
+		JOIN payers PD
+		ON PT.PAYER = PD.Id
+        
+WHERE PD.NAME = Insurer_Name;
+END $$
 
 
 
