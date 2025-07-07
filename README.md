@@ -5,17 +5,27 @@
 ----
 
 ## Table of Contents
-1. [Projective Objective](#projective-objective)
-2. [Project Hypotheses](#project-hypotheses)
-3. [Data Source and Description](#data-source-and-description)
-4. [Tools](#tools)
-5. [Data Cleaning and Preparation](#data-cleaning-and-preparation)
-6. [Exploratory Data Analysis](#exploratory-data-analysis)
-7. [Data Analysis](#data-analysis)
-8. [Findings](#findings)
-9. [Recommendations](#recommendations)
-10. [Limitations](#limitations)
-11. [References](#references)
+[Projective Objective](#projective-objective)
+
+[Project Hypotheses](#project-hypotheses)
+
+[Data Source and Description](#data-source-and-description)
+
+[Tools](#tools)
+
+[Data Cleaning and Preparation](#data-cleaning-and-preparation)
+
+[Exploratory Data Analysis](#exploratory-data-analysis)
+
+[Data Analysis](#data-analysis)
+
+[Findings](#findings)
+
+[Recommendations](#recommendations)
+
+[Limitations](#limitations)
+
+[References](#references)
   
 ---
 ## Projective Objective
