@@ -72,9 +72,13 @@ You can find full dataset used here - [Dataset](https://github.com/Irene-Chola/M
 -----
 ## Data Cleaning and Preparation
 A comprehensive multi-stage data cleaning pipeline was implemented to ensure data quality and analytical reliability across all datasets. The process involved systematic validation, transformation, and standardization of healthcare records.
-Missing Values: 12.3% across all datasets
+
+-Missing Values: 12.3% across all datasets
+
 -Duplicate Records: 847 duplicate patient entries identified
+
 -Data Type Inconsistencies: 23 fields requiring type conversion
+
 -Format Standardization: Names, dates, and categorical variables needed normalization 
 
 **Alteryx Designer**
@@ -82,6 +86,7 @@ Missing Values: 12.3% across all datasets
 **Key Transformations:**
 
 -Data Type Optimization: Converted 23 fields to appropriate data types (dates, integers, strings)
+
 -String Cleaning: Removed special characters and standardized patient names using regex patterns
 
 
@@ -239,7 +244,7 @@ Here is a list a comprehensive list of queries that was used for data analysis
 
 -Discovered significant demographic disparities in healthcare access and coverage
 
--Developed predictive models for revenue optimization and resource allocation
+
 
 -----
 ## References
